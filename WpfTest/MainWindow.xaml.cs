@@ -6,14 +6,23 @@ namespace WpfTest
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
+        #if WIN
+            : Window
+        #endif
     {
         public MainWindow()
         {
-            InitializeComponent();
+            #if WIN
+                InitializeComponent();
+            #endif
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void button_Click(object sender
+            #if WIN
+                , RoutedEventArgs e
+            #endif
+            )
         {
             Environment.Exit(0);
         }
