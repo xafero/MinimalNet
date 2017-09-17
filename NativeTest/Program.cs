@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 
@@ -41,6 +42,18 @@ namespace NativeTest
             structi.Crap();
             Console.WriteLine(typeof(SuperStruct).Assembly.FullName);
             deep.OnMouseExploding += Deep_OnMouseExploding;
+
+            //IDictionary<string, SomeDelegate> dict = new Dictionary<string, SomeDelegate>();
+            // Console.WriteLine(dict["hello"]);
+
+            //ISet<ISomeDeep> set = new HashSet<ISomeDeep>();
+            // Console.WriteLine(set.Add(null));
+
+            //IList<SuperStruct> list = new List<SuperStruct>();
+            // Console.WriteLine(list[1]);
+
+            SomeDelegate[] delgts = new SomeDelegate[12];
+            Console.WriteLine(delgts[3]);
         }
 
         private static void Deep_OnMouseExploding(object sender, EventArgs e)
