@@ -43,23 +43,33 @@ namespace NativeTest
             Console.WriteLine(typeof(SuperStruct).Assembly.FullName);
             deep.OnMouseExploding += Deep_OnMouseExploding;
 
-            //IDictionary<string, SomeDelegate> dict = new Dictionary<string, SomeDelegate>();
-            // Console.WriteLine(dict["hello"]);
+            var myFun = GetMySpecialMeth<SomeDelegate, ISomeDeep>(false, null, 0);
+            Console.WriteLine(myFun);
 
-            //ISet<ISomeDeep> set = new HashSet<ISomeDeep>();
-            // Console.WriteLine(set.Add(null));
+            var mySun = GetMySpecialMeth<ISet<ISomeDeep>>(true, 1);
+            Console.WriteLine(mySun);
 
-            //IList<SuperStruct> list = new List<SuperStruct>();
-            // Console.WriteLine(list[1]);
+            var myCan = GetMySpecialMeth<SomeDelegate[], ISomeDeep>(false, null, 2);
+            Console.WriteLine(myCan);
+            
+            IDictionary<string, SomeDelegate> dict = new Dictionary<string, SomeDelegate>();
+            Console.WriteLine(dict["hello"]);
+
+            ISet<ISomeDeep> set = new HashSet<ISomeDeep>();
+            Console.WriteLine(set.Add(null));
+
+            IList<SuperStruct> list = new List<SuperStruct>();
+            Console.WriteLine(list[1]);
 
             SomeDelegate[] delgts = new SomeDelegate[12];
             Console.WriteLine(delgts[3]);
         }
 
-        private static void Deep_OnMouseExploding(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+        private static T GetMySpecialMeth<T, U>(bool me, U deep, int x) { throw new NotImplementedException(); }
+        
+        private static T GetMySpecialMeth<T>(bool me, int x) { throw new NotImplementedException(); }
+
+        private static void Deep_OnMouseExploding(object sender, EventArgs e) { throw new NotImplementedException(); }
 
         [STAThread]
         static void Main()
