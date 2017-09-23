@@ -51,7 +51,7 @@ namespace NativeTest
 
             var myCan = GetMySpecialMeth<SomeDelegate[], ISomeDeep>(false, null, 2);
             Console.WriteLine(myCan);
-            
+
             IDictionary<string, SomeDelegate> dict = new Dictionary<string, SomeDelegate>();
             Console.WriteLine(dict["hello"]);
 
@@ -63,10 +63,16 @@ namespace NativeTest
 
             SomeDelegate[] delgts = new SomeDelegate[12];
             Console.WriteLine(delgts[3]);
+
+            SomeDelegate[,] delgts2 = new SomeDelegate[12, 45];
+            Console.WriteLine(delgts2[3, 1]);
+
+            SomeDelegate[,,] delgts3 = new SomeDelegate[12, 45, 78];
+            Console.WriteLine(delgts3[3, 1, 2]);
         }
 
         private static T GetMySpecialMeth<T, U>(bool me, U deep, int x) { throw new NotImplementedException(); }
-        
+
         private static T GetMySpecialMeth<T>(bool me, int x) { throw new NotImplementedException(); }
 
         private static void Deep_OnMouseExploding(object sender, EventArgs e) { throw new NotImplementedException(); }
