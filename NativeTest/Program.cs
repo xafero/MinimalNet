@@ -77,6 +77,12 @@ namespace NativeTest
 
         private static void Deep_OnMouseExploding(object sender, EventArgs e) { throw new NotImplementedException(); }
 
+        private class Constri<A, B, C> 
+            where A : new() where B : ISomeDeep where C : IDictionary<ISomeDeep, Tuple<DateTime, SomeDelegate>> { }
+
+        private static void GetConstri<A, B, C, D>(A a, B b, C[] c, D d) 
+            where A : IList<DateTime> where B : struct where C : HashSet<SomeDelegate> where D : class { }
+
         [STAThread]
         static void Main()
         {
