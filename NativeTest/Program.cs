@@ -83,6 +83,13 @@ namespace NativeTest
         private static void GetConstri<A, B, C, D>(A a, B b, C[] c, D d) 
             where A : IList<DateTime> where B : struct where C : HashSet<SomeDelegate> where D : class { }
 
+        private static IDictionary<T, Tuple<ISomeDeep, SomeDelegate, U, bool>> Specialize<T, U>()
+            where T : IDictionary<T, Tuple<ISomeDeep, SomeDelegate, U, bool>>
+            where U : Tuple<ISet<T>, ISomeDeep, SomeDelegate, U, bool>
+        {
+            return null;
+        }
+
         [STAThread]
         static void Main()
         {
