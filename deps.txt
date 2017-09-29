@@ -1,0 +1,38 @@
+
+WinForms
+========
+System.Windows.Forms
+System.Drawing
+
+WPF
+===
+PresentationCore
+PresentationFramework
+WindowsBase
+WindowsFormsIntegration
+System.Xaml
+
+Automation
+==========
+UIAutomationClient
+UIAutomationTypes
+
+WCF
+===
+System.ServiceModel
+System.ServiceModel.Web
+System.ServiceModel.Discovery
+System.Security
+
+Win32
+=====
+kernel32.dll mapi32.dll shlwapi.dll
+ole32.dll shell32.dll user32.dll
+gdi32.dll powrprof.dll comctl32.dll
+oleaut32.dll propsys.dll dwmapi.dll
+twain_32.dll twaindsm.dll
+
+Server
+======
+System.ServiceProcess
+
